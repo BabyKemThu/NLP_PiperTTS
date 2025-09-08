@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ book.title }}</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS ngoài -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- jQuery + Turn.js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/turn.min.js') }}"></script>
+</head>
+<body>
+  <!-- 🔙 Nút quay về Trang Chủ -->
+  <a href="/" class="back-home">⬅️ Quay về Trang Chủ</a>
+
+  <h1>{{ book.title }}</h1>
+
+  <!-- 📚 Quyển sách -->
+  <div class="book-wrapper">
+    <div id="flipbook">
+      <!-- Trang bìa -->
+      <div class="page cover">
+        <h2>📖 {{ book.title }}</h2>
+      </div>
+
+      {% for page in book.pages %}
+        <!-- Trang ảnh (trái) -->
+        <div class="page">
+          <img src="{{ page.image }}" alt="Ảnh trang {{ loop.index }}">
+        </div>
+
+        <!-- Trang chữ (phải) -->
+        <div class="page">
+          <div>
+            <p>{{ page.text }}</p>
+            {% if page.audio %}
+              <audio controls data-page="{{ loop.index0 }}">
+                <source src="{{ url_for('static', filename='audio/' ~ page.audio) }}" type="audio/wav">
+              </audio>
+              <div class="wave hidden">
+                <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              </div>
+            {% else %}
+              <button class="generate-audio" data-book="{{ book.id }}" data-page="{{ loop.index0 }}">
+                🔊 Tạo & Phát Audio
+              </button>
+              <p style="font-size:14px; color:#777;">(Chưa có audio cho trang này)</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 🎛️ Nút điều khiển -->
+  <div class="controls">
+    <button id="prev">⟨⟨ Trang Trước</button>
+    <button id="next">Trang Sau ⟩⟩</button>
+    <button id="playAll">🔊 Nghe Cả Câu Chuyện</button>
+  </div>
+
+  <!-- Script điều khiển -->
+  <script>
+    $(window).on('load', function() {
+      $("#flipbook").turn({
+        width: 900,
+        height: 550,
+        autoCenter: true,
+        display: 'double',
+        duration: 1000,
+        elevation: 50,
+        gradients: true
+      });
+
+      $("#prev").click(function(){ $("#flipbook").turn("previous"); });
+      $("#next").click(function(){ $("#flipbook").turn("next"); });
+
+      // 🎵 Sóng nhạc
+      $(document).on("play", "audio", function() {
+        $("audio").not(this).each(function(){ this.pause(); });
+        $(this).siblings(".wave").removeClass("hidden");
+      });
+      $(document).on("pause ended", "audio", function() {
+        $(this).siblings(".wave").addClass("hidden");
+      });
+
+      // 🔊 Nghe toàn bộ
+      $("#playAll").click(function() {
+        let audios = $("#flipbook audio");
+        let index = 0;
+        function playNext() {
+          if (index < audios.length) {
+            let audio = audios[index];
+            let pageIndex = $(audio).data("page");
+            $("#flipbook").turn("page", pageIndex * 2);
+            audio.play();
+            audio.onended = function() {
+              index++;
+              setTimeout(playNext, 1000);
+            };
+          }
+        }
+        playNext();
+      });
+
+      // 🆕 Tạo & phát audio
+      $(document).on("click", ".generate-audio", function() {
+        let bookId = $(this).data("book");
+        let pageIdx = $(this).data("page");
+        let button = $(this);
+
+        button.text("⏳ Đang tạo audio...");
+        $.get(`/generate_audio/${bookId}/${pageIdx}`, function(res) {
+          if (res.audio_url) {
+            let audioTag = `
+              <audio controls autoplay data-page="${pageIdx}">
+                <source src="${res.audio_url}" type="audio/wav">
+              </audio>
+              <div class="wave">
+                <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              </div>
+            `;
+            button.replaceWith(audioTag);
+          } else {
+            button.text("❌ Lỗi khi tạo audio");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

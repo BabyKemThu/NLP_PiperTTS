@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "title": "Chú Chó Con",
+    "category": "Động Vật",
+    "thumbnail": "/static/images/chuchocon_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/chuchocon_1.jpg",
+        "text": "Chú chó con chạy thật nhanh.",
+        "audio": "7fdbd7e2898a456e88aa83ef5fa9608b.wav"
+      },
+      {
+        "image": "/static/images/chuchocon_2.jpg",
+        "text": "Chú chó con thích chơi với quả bóng.",
+        "audio": "a435b4baab3d4d4eb947b27675c88ccf.wav"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mèo và Chuột",
+    "category": "Động Vật",
+    "thumbnail": "/static/images/meochuot_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/meochuot_1.jpg",
+        "text": "Mèo con đuổi theo chuột.",
+        "audio": "e8f39ec834734d75b0ce96c71187b5ef.wav"
+      },
+      {
+        "image": "/static/images/meochuot_2.jpg",
+        "text": "Chuột trốn vào hang nhỏ.",
+        "audio": "fffc28bc22cf401483655b4ca83d18af.wav"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Bạn Thỏ Thông Minh",
+    "category": "Truyện Cổ Tích",
+    "thumbnail": "/static/images/bantho_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/bantho_1.jpg",
+        "text": "Bạn Thỏ nhỏ sống trong khu rừng xanh.",
+        "audio": "28a6ffec6bae466ebd957f5d77b7f6ed.wav"
+      },
+      {
+        "image": "/static/images/bantho_2.jpg",
+        "text": "Một hôm Cáo gian ác định bắt Thỏ.",
+        "audio": "6d52a31191674dce88ef10099e2abde0.wav"
+      },
+      {
+        "image": "/static/images/bantho_3.jpg",
+        "text": "Nhờ trí thông minh, Thỏ đã thoát khỏi Cáo.",
+        "audio": "db49b1f764b64bb8abe10efe19443fa2.wav"
+      },
+      {
+        "image": "/static/images/bantho_4.jpg",
+        "text": "Thỏ trở về nhà an toàn và hạnh phúc.",
+        "audio": "dce73cb68d6d4503aff6b3a029c30f28.wav"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Chim Non Học Bay",
+    "category": "Truyện Ngụ Ngôn",
+    "thumbnail": "/static/images/chimnon_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/chimnon_1.jpg",
+        "text": "Trong tổ, chim non ngày ngày lắng nghe chim mẹ dạy bay.",
+        "audio": "61f7dbfe1e4042249ca13f411f7e915b.wav"
+      },
+      {
+        "image": "/static/images/chimnon_2.jpg",
+        "text": "Chim non dang cánh, rơi xuống rồi lại cố gắng.",
+        "audio": "f264054ad00c45eb9476c5014aa38628.wav"
+      },
+      {
+        "image": "/static/images/chimnon_3.jpg",
+        "text": "Cuối cùng, chim non đã bay cao trên bầu trời xanh.",
+        "audio": "1b1716f3318f40ee8e58cfd40404cec2.wav"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Ba Chú Heo Con",
+    "category": "Truyện Cổ Tích",
+    "thumbnail": "/static/images/baheo_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/baheo_1.jpg",
+        "text": "Ngày xưa có ba chú heo con rời nhà mẹ để tự xây nhà.",
+        "audio": "cff43fdfd0704bb08bfd0e562a07995f.wav"
+      },
+      {
+        "image": "/static/images/baheo_2.jpg",
+        "text": "Chú heo đầu tiên xây nhà bằng rơm, rất nhanh nhưng yếu ớt.",
+        "audio": "77dccd59753b47bca21071aa348b457d.wav"
+      },
+      {
+        "image": "/static/images/baheo_3.jpg",
+        "text": "Chú heo thứ hai xây nhà bằng gỗ, chắc hơn nhưng vẫn chưa an toàn.",
+        "audio": "046a915480f743b2884dfa92928d6f43.wav"
+      },
+      {
+        "image": "/static/images/baheo_4.jpg",
+        "text": "Chú heo thứ ba xây nhà bằng gạch, kiên cố và bền vững.",
+        "audio": "0a2eeb3fd588430fb86c7d300e3df0b5.wav"
+      },
+      {
+        "image": "/static/images/baheo_5.jpg",
+        "text": "Sói đến thổi rơm, gỗ bay tung tóe nhưng không phá nổi nhà gạch.",
+        "audio": "bcbf895f1ff34e5dab0c3e8d43741552.wav"
+      },
+      {
+        "image": "/static/images/baheo_6.jpg",
+        "text": "Ba chú heo vui vẻ nhảy múa, sống an lành trong ngôi nhà chắc chắn.",
+        "audio": "b08bd9495e16467292cce42c59ccbeb7.wav"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Cây Tre Trăm Đốt",
+    "category": "Truyện Cổ Tích",
+    "thumbnail": "/static/images/caytre_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/caytre_1.jpg",
+        "text": "Ngày xưa có một chàng trai nghèo làm thuê cho phú ông.",
+        "audio": "f365e3f973a34757ab4bd49f59036e2f.wav"
+      },
+      {
+        "image": "/static/images/caytre_2.jpg",
+        "text": "Phú ông hứa gả con gái cho chàng trai nếu tìm được cây tre trăm đốt.",
+        "audio": "56556af5fcf04436a2274b340beab0f4.wav"
+      },
+      {
+        "image": "/static/images/caytre_3.jpg",
+        "text": "Nhờ phép màu, tre liền thành cây trăm đốt, chàng cưới được vợ hiền.",
+        "audio": "585f7921e09f4ecfa7faef48847118a5.wav"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Cáo và Quạ",
+    "category": "Truyện Ngụ Ngôn",
+    "thumbnail": "/static/images/caoqua_thumb.jpg",
+    "pages": [
+      {
+        "image": "/static/images/caoqua_1.jpg",
+        "text": "Một con quạ ngậm miếng thịt trên cành cây.",
+        "audio": "5938dcfb09b9473a97daeabbb0ad76c4.wav"
+      },
+      {
+        "image": "/static/images/caoqua_2.jpg",
+        "text": "Cáo đến, khen quạ có giọng hát hay, dụ quạ há miệng.",
+        "audio": "e9ca33dd422d4aebb6a1898470b97456.wav"
+      },
+      {
+        "image": "/static/images/caoqua_3.jpg",
+        "text": "Quạ há miệng kêu, thịt rơi xuống, Cáo nhanh nhẹn cướp mất.",
+        "audio": "57701e935edd443e99de53545f237aa6.wav"
+      }
+    ]
+  }
+]
