@@ -1,0 +1,11 @@
+# Ignore large model & audio files
+*.onnx
+*.wav
+
+# Ignore dataset and generated files
+audio/
+static/audio/
+data/
+
+# Ignore submodules or extra repos
+turn.js/
